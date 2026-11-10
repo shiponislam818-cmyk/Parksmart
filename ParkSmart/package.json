@@ -1,0 +1,20 @@
+{
+  "name": "parksmart",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ParkSmart — web-based smart parking management system (CSE 418 project)",
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -n api,web -c yellow,cyan \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "db:setup": "npm --prefix server run db:setup",
+    "db:reset": "npm --prefix server run db:reset",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "test": "npm --prefix server run test:unit",
+    "test:coverage": "npm --prefix server run test:coverage",
+    "test:integration": "npm --prefix server run test:integration"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
